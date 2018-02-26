@@ -30,9 +30,7 @@ public class Constant {
     
     public static final String PROPERTY_NAME_HIBERNATE_DEFAULT_CATALOG = "com.miumg.wstickets.hibernate.default_catalog";
     
-    public static final String PROPERTY_NAME_HIBERNATE_DEFAULT_SCHEMA = "com.miumg.wstickets.hibernate.default_schema";
-   
-    public static final String PROPERTY_NAME_DATA_SOURCER_MAXIMUN_POOLSIZE = "com.miumg.wstickets.datasource.maximunPoolSize";
+   public static final String PROPERTY_NAME_DATA_SOURCER_MAXIMUN_POOLSIZE = "com.miumg.wstickets.datasource.maximunPoolSize";
     
     public static final String PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN = "com.miumg.wstickets.entitymanager.packages.to.scan";
 }

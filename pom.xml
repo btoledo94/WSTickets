@@ -29,7 +29,7 @@
         <xml-apis.version>1.4.01</xml-apis.version>
     </properties>
     
-    <parent>
+   <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.3.5.RELEASE</version>
@@ -37,51 +37,29 @@
     
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+    <groupId>oracle</groupId>
+    <artifactId>ojdbc6</artifactId>
+    <version>11.2.0.3</version>
+</dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
-        
-        <!--Driver .jar para base de datos-->
-        <dependency>
-<groupId>com.oracle</groupId>
-<artifactId>ojdbc6</artifactId>
-<version>11.2.0.2.0</version>
-</dependency>
-        
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-            <version>1.2.1</version> <!-- makesure correct version here -->
-        </dependency>
-        <!-- Librerias para patron MVC, web services Rest y JPA -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-<!--        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-<!--        <dependency>
-            <groupId>org.springframework.security.oauth</groupId>
-            <artifactId>spring-security-oauth2</artifactId>
-        </dependency>-->
-<!--        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-jwt</artifactId>
-        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-             
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -140,28 +118,28 @@
             <artifactId>querydsl-jpa</artifactId>
             <version>${querydsl.version}</version>
         </dependency>
-             
+        
+        
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-envers</artifactId>
             <version>1.0.2.RELEASE</version>
         </dependency>
-        
-        <!--Libreria para la persistencia de datos-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <type>jar</type>
         </dependency>
-       
-        <!--Libreria que maneja las conexiones a la base de datos-->
-       <dependency>
+        <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP-java6</artifactId>
         </dependency>
         
-               
-        <!--Librerias para manejar JSON en Java-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -192,7 +170,11 @@
             <version>2.4</version>
             <type>jar</type>
         </dependency>
-        
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2</version>
+        </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-core</artifactId>
@@ -209,8 +191,7 @@
             <version>3.4</version>
             <type>jar</type>
         </dependency>
-        
-        <dependency>
+       <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.4</version>
@@ -220,6 +201,7 @@
             <artifactId>scribe</artifactId>
             <version>1.3.6</version>
         </dependency>
+        
     </dependencies>
 
     <build>

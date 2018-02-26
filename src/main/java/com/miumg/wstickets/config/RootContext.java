@@ -51,9 +51,9 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @Configuration
 @EnableJpaRepositories(
-        entityManagerFactoryRef = "mysqlEntityManagerFactory",
-        transactionManagerRef = "mysqlTransactionManager",
-        basePackages = {"gt.umg.ventaonline"}
+        entityManagerFactoryRef = "com.miumg.wsticketsEntityManagerFactory",
+        transactionManagerRef = "com.miumg.wsticketsTransactionManager",
+        basePackages = {"com.miumg.wstickets"}
 )
 @EnableTransactionManagement
 public class RootContext {
@@ -67,8 +67,8 @@ public class RootContext {
      *
      * @return
      */
-    @Bean(name = "mysqlDataSource")
-    @Qualifier("mysqlDataSource")
+    @Bean(name = "com.miumg.wsticketsDataSource")
+    @Qualifier("com.miumg.wsticketsDataSource")
     @Primary
     public DataSource dataSource() {
         HikariDataSource dataSource = new HikariDataSource();
@@ -86,8 +86,8 @@ public class RootContext {
      * @return
      * @throws ClassNotFoundException
      */
-    @Bean(name = "mysqlEntityManager")
-    @Qualifier(value = "mysqlEntityManager")
+    @Bean(name = "com.miumg.wsticketsEntityManager")
+    @Qualifier(value = "com.miumg.wsticketsEntityManager")
     public EntityManager entityManager() throws ClassNotFoundException {
         return entityManagerFactory().createEntityManager();
     }
@@ -97,8 +97,8 @@ public class RootContext {
      * @return
      * @throws ClassNotFoundException
      */
-    @Bean(name = "mysqlEntityManagerFactory")
-    @Qualifier("mysqlEntityManagerFactory")
+    @Bean(name = "com.miumg.wsticketsEntityManagerFactory")
+    @Qualifier(value = "com.miumg.wsticketsEntityManagerFactory")
     public EntityManagerFactory entityManagerFactory() throws ClassNotFoundException {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource());
@@ -123,8 +123,8 @@ public class RootContext {
      * @return
      * @throws ClassNotFoundException
      */
-    @Bean(name = "mysqlTransactionManager")
-    @Qualifier("mysqlTransactionManager")
+    @Bean(name = "com.miumg.wsticketsTransactionManager")
+    @Qualifier("com.miumg.wsticketsTransactionManager")
     @Primary
     public PlatformTransactionManager transactionManager() throws ClassNotFoundException {
         return new JpaTransactionManager(entityManagerFactory());
