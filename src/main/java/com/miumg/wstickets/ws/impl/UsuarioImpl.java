@@ -26,6 +26,7 @@ public class UsuarioImpl implements UsuarioInt{
     @Override
     public ResponseEntity<Usuario> create(String correo) throws Exception {
         Usuario usuario = new Usuario();
+        usuario.setId(1);
         usuario.setNombre("Byron Toledo");
         usuario.setCorreo(correo);
         return new ResponseEntity(usuarioRepo.save(usuario), HttpStatus.OK);

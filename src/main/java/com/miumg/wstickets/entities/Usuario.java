@@ -18,8 +18,8 @@ public class Usuario implements java.io.Serializable {
  
 @Id
 @Column(name = "ID")
+@SequenceGenerator(name = "id_usuarioseq", sequenceName = "id_usuario" , allocationSize = 1)
 @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_usuarioseq")
-@SequenceGenerator(name = "id_usuarioseq", sequenceName = "id_usuarioseq")
     private Integer id;
     
     @Column(name = "CORREO", length = 25)

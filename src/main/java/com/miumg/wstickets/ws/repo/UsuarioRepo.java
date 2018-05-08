@@ -26,5 +26,5 @@ public interface UsuarioRepo extends JpaRepository<Usuario,Integer>{
     
     @Override()
     List<Usuario> findAll();
-    
+        
 }
